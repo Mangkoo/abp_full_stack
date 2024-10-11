@@ -18,12 +18,26 @@
 <h1>Merch</h1>
 
 @*TODO: This should be view component or something.*@
-<abp-card class="card">
+<abp-card class="merch-card">
+    @*TODO: Image render.*@
+    @* <img abp-card-image="Top" src="" /> *@
     <abp-card-body>
-        <abp-card-title>Card title</abp-card-title>
-        <abp-card-subtitle class="mb-2 text-muted">Card subtitle</abp-card-subtitle>
-        <abp-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</abp-card-text>
-        <a abp-card-link href="#">Card link</a>
-        <a abp-card-link href="#">Another link</a>
+        <abp-card-title>
+            Item 01
+        </abp-card-title>
+        <abp-card-subtitle class="mb-2 text-muted">
+            Collection 01
+        </abp-card-subtitle>
+        <abp-card-text>
+            @*TODO: Price.*@
+            <div class="display-6">$34.00</div>
+            @*TODO: Add to cart button.*@
+            <a abp-button="Secondary" 
+            href="#"
+            class="mt-2">
+                Add to cart
+            </a>
+        </abp-card-text>
+
     </abp-card-body>
 </abp-card>

@@ -7,7 +7,6 @@
 @inject ICurrentUser CurrentUser
 @section styles 
 {
-<abp-style src="/Pages/Index.css" />
 }
 @section scripts 
 {
@@ -17,7 +16,7 @@
 @*Page header.*@
 <h1>Other</h1>
 
-<abp-card style="width: 18rem;">
+<abp-card class="merch-card">
     <abp-card-body>
         <abp-card-title>
             Button Types
@@ -26,25 +25,35 @@
             Buttons according to the LeptonX flavour of Bootstrap.
         </abp-card-text>
         
-            <a abp-button="Primary" href="#">
-                Primary Button
-            </a>
-            <a abp-button="Secondary" href="#">
-                Primary Button
-            </a>
-            <a abp-button="Outline_Primary" href="#">
-                Outline (P) Button
-            </a>
-            <a abp-button="Outline_Secondary" href="#">
-                Outline (S) Button
-            </a>
+        <a abp-button="Primary" href="#">
+            Primary Button
+        </a>
+        <a abp-button="Secondary" href="#">
+            Secondary Button
+        </a>
+        <a abp-button="Outline_Primary" href="#">
+            Outline (P) Button
+        </a>
+        <a abp-button="Outline_Secondary" href="#">
+            Outline (S) Button
+        </a>
 
-            <a abp-button="Danger" href="#">
-                Danger Button
-            </a>
-            <a abp-button="Dark" href="#">
-                Dark Button
-            </a>
+        <a abp-button="Success" href="#">
+            Success Button
+        </a>
+        <a abp-button="Warning" href="#">
+            Warning Button
+        </a>
+        <a abp-button="Danger" href="#">
+            Danger Button
+        </a>
+
+        <a abp-button="Dark" href="#">
+            Dark Button
+        </a>
+        <a abp-button="Light" href="#">
+            Light Button
+        </a>
 
     </abp-card-body>
 </abp-card>
