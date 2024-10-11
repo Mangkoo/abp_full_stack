@@ -23,16 +23,32 @@ public class FullStackMenuContributor : IMenuContributor
         var administration = context.Menu.GetAdministration();
         var l = context.GetLocalizer<FullStackResource>();
 
-        context.Menu.Items.Insert(
-            0,
-            new ApplicationMenuItem(
-                FullStackMenus.Home,
-                l["Menu:Home"],
-                "~/",
-                icon: "fas fa-home",
-                order: 0
-            )
-        );
+        context.Menu.Items.InsertRange(
+            0, 
+            [
+                new ApplicationMenuItem(
+                    FullStackMenus.Home,
+                    l["Menu:Home"],
+                    "~/",
+                    icon: "fas fa-home",
+                    order: 0
+                ),
+                new ApplicationMenuItem(
+                    FullStackMenus.Merch,
+                    l["Menu:Merch"],
+                    "~/Merch",
+                    icon: "fas fa-shirt",
+                    order: 1
+                ),
+                new ApplicationMenuItem(
+                    FullStackMenus.Other,
+                    l["Menu:Other"],
+                    "~/Other" +
+                    "",
+                    icon: "fas fa-flask",
+                    order: 2
+                )
+            ]);
 
         if (MultiTenancyConsts.IsEnabled)
         {

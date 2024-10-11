@@ -1,0 +1,29 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Mangkoo.FullStack.Localization
+@using Volo.Abp.Users
+@model Mangkoo.FullStack.Web.Pages.Merch.IndexModel
+@inject IHtmlLocalizer<FullStackResource> L
+@inject ICurrentUser CurrentUser
+@section styles 
+{
+    <abp-style src="/Pages/Merch/Index.css" />
+}
+@section scripts 
+{
+    <abp-script src="/Pages/Merch/Index.js" />
+}
+
+@*Page header.*@
+<h1>Merch</h1>
+
+@*TODO: This should be view component or something.*@
+<abp-card class="card">
+    <abp-card-body>
+        <abp-card-title>Card title</abp-card-title>
+        <abp-card-subtitle class="mb-2 text-muted">Card subtitle</abp-card-subtitle>
+        <abp-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</abp-card-text>
+        <a abp-card-link href="#">Card link</a>
+        <a abp-card-link href="#">Another link</a>
+    </abp-card-body>
+</abp-card>

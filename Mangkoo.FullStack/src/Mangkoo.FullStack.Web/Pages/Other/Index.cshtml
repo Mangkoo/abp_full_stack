@@ -1,0 +1,50 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Mangkoo.FullStack.Localization
+@using Volo.Abp.Users
+@model Mangkoo.FullStack.Web.Pages.Other.IndexModel
+@inject IHtmlLocalizer<FullStackResource> L
+@inject ICurrentUser CurrentUser
+@section styles 
+{
+<abp-style src="/Pages/Index.css" />
+}
+@section scripts 
+{
+<abp-script src="/Pages/Index.js" />
+}
+
+@*Page header.*@
+<h1>Other</h1>
+
+<abp-card style="width: 18rem;">
+    <abp-card-body>
+        <abp-card-title>
+            Button Types
+        </abp-card-title>
+        <abp-card-text>
+            Buttons according to the LeptonX flavour of Bootstrap.
+        </abp-card-text>
+        
+            <a abp-button="Primary" href="#">
+                Primary Button
+            </a>
+            <a abp-button="Secondary" href="#">
+                Primary Button
+            </a>
+            <a abp-button="Outline_Primary" href="#">
+                Outline (P) Button
+            </a>
+            <a abp-button="Outline_Secondary" href="#">
+                Outline (S) Button
+            </a>
+
+            <a abp-button="Danger" href="#">
+                Danger Button
+            </a>
+            <a abp-button="Dark" href="#">
+                Dark Button
+            </a>
+
+    </abp-card-body>
+</abp-card>

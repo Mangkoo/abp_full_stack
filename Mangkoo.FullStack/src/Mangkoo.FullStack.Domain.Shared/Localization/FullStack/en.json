@@ -1,9 +1,14 @@
 {
   "culture": "en",
   "texts": {
-    // General app values. 
+    // General app values.
     "AppName": "FullStack",
+
+    // Menu.
     "Menu:Home": "Home",
+    "Menu:Merch": "Merch",
+    "Menu:Other": "Other",
+
     "Welcome": "Welcome",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
   }
