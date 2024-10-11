@@ -1,6 +1,7 @@
 {
   "culture": "en",
   "texts": {
+    // General app values. 
     "AppName": "FullStack",
     "Menu:Home": "Home",
     "Welcome": "Welcome",
