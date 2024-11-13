@@ -1,4 +1,5 @@
 ﻿@page
+@using Mangkoo.FullStack.Web.Payments
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Mangkoo.FullStack.Localization
 @using Volo.Abp.Users
@@ -17,9 +18,8 @@
 @*Page header.*@
 <h1>Merch</h1>
 
-@*TODO: This should be view component or something.*@
+@*Factory demo.*@
 <abp-card class="merch-card">
-    @*TODO: Image render.*@
     @* <img abp-card-image="Top" src="" /> *@
     <abp-card-body>
         <abp-card-title>
@@ -29,15 +29,56 @@
             Collection 01
         </abp-card-subtitle>
         <abp-card-text>
-            @*TODO: Price.*@
-            <div class="display-6">$34.00</div>
-            @*TODO: Add to cart button.*@
-            <a abp-button="Secondary" 
-            href="#"
-            class="mt-2">
-                Add to cart
-            </a>
+            <form method="post">
+  
+                <abp-input asp-for="@Model.PaymentAmount" />
+
+
+                @foreach (var method in Enum.GetValues(typeof(PaymentMethod)).Cast<PaymentMethod>())
+                {
+                    <div class="form-check">
+                        <input 
+                            type="radio"
+                            id="@method"
+                               name="PaymentMethod"
+                            value="@method"
+                            class="form-check-input"
+                            asp-for="PaymentMethod" />
+
+                        <label class="form-check-label" for="@method">
+                            @method
+                        </label>
+                    </div>
+                }
+    
+                @*This is just a factory demo.*@
+                <abp-button button-type="Secondary"
+                    type="submit"
+                    class="mt-2">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Make Payment
+                </abp-button >
+            </form>
+
         </abp-card-text>
 
     </abp-card-body>
 </abp-card>
+
+@if (Model.PaymentMade)
+{
+    <abp-card class="merch-card">
+        @*TODO: Image render.*@
+        @* <img abp-card-image="Top" src="" /> *@
+        <abp-card-body>
+            <abp-card-title>
+                Payment done! 
+            </abp-card-title>
+
+            <abp-card-text>
+                <p>You just paid $@Model.PaymentAmount using @Model.PaymentMethod, check the logs to see messages from the Factory! 😀</p>
+            </abp-card-text>
+
+        </abp-card-body>
+    </abp-card>
+}
